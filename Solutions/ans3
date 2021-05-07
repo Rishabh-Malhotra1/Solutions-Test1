@@ -1,0 +1,12 @@
+void Print(char *stream){
+	int i=0;
+	map<char,int> m;
+	char ls;
+	while(stream[i]!='\n'){
+		ls = stream[i];
+		m[stream[i]]++;
+		i++;
+	}
+	
+	cout<<m[ls];
+}

@@ -1,0 +1,23 @@
+bool Print(char *stream){
+	stack<char> st;
+	int i=0;
+	while(stream[i]!='\0'){
+		if(stream[i]=='('||stream[i]=='['||stream[i]=='{'){
+			st.push(stream[i]);
+		}else if(stream[i]==')'||stream[i]==']'||stream[i]=='}'){
+			if(st.empty()){
+				return false;
+			}else if(stream[i]==')'&&st.top()=='('){
+				st.pop();
+			}else if(stream[i]==']'&&st.top()=='['){
+				st.pop();
+			}else if(stream[i]=='}'&&st.top()=='{'){
+				st.pop();
+			}else{
+				return false;
+			}
+		}
+		i++;
+	}
+	return true;
+}

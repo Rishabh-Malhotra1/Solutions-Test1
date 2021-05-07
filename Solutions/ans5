@@ -1,0 +1,28 @@
+struct node{
+	char c;
+	node *nxt;
+};
+void Print(){
+	//Creating a linked list of characters
+	char input;
+	cin>>input;
+	node *head = new node();
+	int len = 0;
+	node *temp = new node();
+	temp = head;
+	while(input!='N'){
+		temp->c = input;
+		len++; 
+		cin>>input;
+		temp->nxt = new node();
+		temp = temp->nxt;
+	}
+	int i=1;
+	temp = head;
+	
+	while(i<len/2){
+		i++; 
+		temp = temp->nxt;
+	}
+	cout<<temp->c;
+}
