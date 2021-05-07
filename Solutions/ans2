@@ -1,0 +1,23 @@
+void Print(vector<int> arr){
+	int min1 = INT_MAX;
+	int min2 = INT_MAX;
+	int max1 = INT_MIN;
+	int max2 = INT_MIN;
+	for(int i=0;i<arr.size();i++){
+		min1 = min(min1,arr[i]);
+	}
+	for(int i=0;i<arr.size();i++){
+		if(arr[i]>min1){
+			min2 = min(min2,arr[i]);	
+		}
+	}
+	for(int i=0;i<arr.size();i++){
+		max1 = max(max1,arr[i]);
+	}
+	for(int i=0;i<arr.size();i++){
+		if(arr[i]<max1){
+			max2 = max(max2,arr[i]);	
+		}
+	}
+	cout<<max(max1*max2,min1*min2);
+}
