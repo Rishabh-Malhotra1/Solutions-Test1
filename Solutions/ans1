@@ -1,0 +1,13 @@
+void Print(vector<int> arr,int n){
+	set<int> nums;
+	for(int i=0;i<arr.size();i++){
+		nums.insert(arr[i]);
+	}
+	set<int>::iterator it;
+	for(it=nums.begin();it!=nums.end();it++){
+		if(nums.count(n-(*it))!=0){
+			cout<<*it<<" "<<n-(*it);
+			return;
+		}
+	}
+}
