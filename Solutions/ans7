@@ -1,0 +1,14 @@
+void Print(vector<int> arr){
+	int min1 = INT_MAX;
+	int max1 = INT_MIN;
+	
+	for(int i=0;i<arr.size();i++){
+		min1 = min(min1,arr[i]);
+	}
+	
+	for(int i=0;i<arr.size();i++){
+		max1 = max(max1,arr[i]);
+	}
+	
+	cout<<max1-min1;
+}
